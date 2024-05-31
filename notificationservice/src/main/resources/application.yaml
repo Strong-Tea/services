@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: notificationservice
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/notificationservice}
+    username: ${DB_USERNAME:alex}
+    password: ${DB_PASSWORD:vboris77}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  kafka:
+    bootstrap-servers: ${KAFKA_URL:localhost:9092}
+    consumer:
+      group-id: notification
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.microservice.orderservice.kafka.dto.OrderEventDto"
+
+kafka:
+  topics:
+    orderNotification: order-notification
+
+server:
+  port: 8080
