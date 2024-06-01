@@ -12,11 +12,10 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
 public class NotificationService {
 
+    @Autowired
     NotificationRepository notificationRepository;
-
 
     public Notification getNotificationById(UUID id) {
         return notificationRepository.findById(id)

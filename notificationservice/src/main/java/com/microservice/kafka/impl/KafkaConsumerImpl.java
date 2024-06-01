@@ -5,7 +5,6 @@ import com.microservice.dto.OrderEventDto;
 import com.microservice.entity.Notification;
 import com.microservice.kafka.KafkaConsumer;
 import com.microservice.repository.NotificationRepository;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -15,9 +14,9 @@ import java.time.LocalDateTime;
 
 @Component
 @Slf4j
-@RequiredArgsConstructor
 public class KafkaConsumerImpl implements KafkaConsumer {
 
+    @Autowired
     private NotificationRepository notificationRepository;
 
     @KafkaListener(topics = "order-notification", groupId = "notification")
