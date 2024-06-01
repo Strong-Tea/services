@@ -1,4 +1,4 @@
-Ссылка на видео: https://drive.google.com/file/d/1u-Zf2WLv9hndgYExVPihV8foNJN6C6Tx/view?usp=sharing
+Ссылка на видео: https://drive.google.com/file/d/1kj_NxfYZGoJI82huOOwKsZ_YxvijbvtD/view?usp=sharing
 
 ## Использовано:
 
